@@ -18,7 +18,7 @@ local active_color = {
 local background_color = beautiful.xcolor0
 
 local battery_bar = wibox.widget {
-    max_value = 100,
+    max_value = 98,
     value = 50,
     forced_height = dpi(10),
     margins = {top = dpi(8), bottom = dpi(8)},
