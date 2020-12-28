@@ -53,10 +53,10 @@ theme.xcolor15 = "#d1d5dc"
 
 -- Fonts
 
-theme.font = "FiraCode Nerd Font Mono 9"
-theme.icon_font = "FiraCode Nerd Font Mono 18"
-theme.font_taglist = "FiraCode Nerd Font Mono 13"
-theme.max_font = "FiraCode Nerd Font Mono 10"
+theme.font = "SF UI Display 10"
+theme.icon_font = "SF UI Display 18"
+theme.font_taglist = "SF UI Display 13"
+theme.max_font = "SF UI Display 10"
 
 -- Background Colors
 
@@ -118,7 +118,7 @@ theme.tasklist_fg_minimize = theme.xforeground .. "70"
 theme.tasklist_bg_normal = theme.xbackground
 theme.tasklist_fg_normal = theme.xforeground
 theme.tasklist_disable_task_name = false
-theme.tasklist_disable_icon = true
+theme.tasklist_disable_icon = false
 theme.tasklist_bg_urgent = theme.xbackground
 theme.tasklist_fg_urgent = theme.xcolor1
 theme.tasklist_spacing = dpi(5)

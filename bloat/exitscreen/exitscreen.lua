@@ -10,7 +10,7 @@ local helpers = require("helpers")
 local pad = helpers.pad
 
 -- Appearance
-local icon_font = "Fira Code NerdFont Mono 45"
+local icon_font = "SF UI Display 45"
 local poweroff_text_icon = ""
 local reboot_text_icon = ""
 local suspend_text_icon = ""

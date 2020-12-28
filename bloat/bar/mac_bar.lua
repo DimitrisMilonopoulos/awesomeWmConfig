@@ -193,18 +193,28 @@ awful.screen.connect_for_each_screen(function(s)
         widget_template = {
             {
                 {
+                    {
+                        {
+                            id     = 'icon_role',
+                            widget = wibox.widget.imagebox,
+                        },
+                        margins = 2,
+                        widget  = wibox.container.margin,
+                    },
                     nil,
-                    {id = 'text_role', widget = wibox.widget.textbox},
-                    nil,
-                    layout = wibox.layout.fixed.horizontal
+                    {
+                       id = 'text_role',
+                       widget = wibox.widget.textbox,
+                    },
+                    layout = wibox.layout.fixed.horizontal,
                 },
-                left = dpi(12),
-                right = dpi(12),
+                left  = 10,
+                right = 10,
                 widget = wibox.container.margin
             },
-            id = 'background_role',
-            widget = wibox.container.background
-        }
+            id     = 'background_role',
+            widget = wibox.container.background,
+        },
     }
 
     -- Add widgets to the wibox
