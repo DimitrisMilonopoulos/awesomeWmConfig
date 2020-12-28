@@ -29,6 +29,9 @@ awful.spawn.with_shell("setxkbmap -option grp:alt_shift_toggle us,gr")
 -- Compositor
 awful.spawn.with_shell("picom --experimental-backends")
 
+-- Spotify server
+awful.spawn.with_shell("/home/dim/Desktop/init_music.sh")
+
 -- Mpd Cleanup
 run_once([[
     ps aux | grep "mpc idleloop player" | grep -v grep | awk '{print $2}' | xargs kill

@@ -115,6 +115,8 @@ globalkeys = gears.table.join( -- Focus client by direction (arrow keys)
     -- Standard program
                  awful.key({modkey}, "Return", function() awful.spawn(terminal) end,
                            {description = "open a terminal", group = "launcher"}),
+                 awful.key({modkey}, "r", function() awful.spawn("jumpapp spotify") end,
+                           {description = "open spotify", group = "launcher"}),
                  awful.key({modkey, shift}, "t", function()
         awful.spawn.easy_async_with_shell(
             "slop -b 2 -c '0.61,0.9,0.75,1' -p -2", function(out)
