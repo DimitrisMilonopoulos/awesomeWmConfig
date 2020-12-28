@@ -17,7 +17,7 @@ popupLib.create = function(x, y, height, width, widget)
 
     local widgetBG = wibox.widget {
         widgetContainer,
-        bg = beautiful.xbackground .. "f0",
+        bg = beautiful.xbackground,
         border_color = beautiful.widget_border_color,
         border_width = dpi(beautiful.widget_border_width),
         shape = helpers.rrect(beautiful.client_radius),

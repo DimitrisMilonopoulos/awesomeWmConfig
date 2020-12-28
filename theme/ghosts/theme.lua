@@ -54,7 +54,7 @@ theme.xcolor15 = "#d1d5dc"
 -- Fonts
 
 theme.font = "SF UI Display 10"
-theme.icon_font = "SF UI Display 18"
+theme.icon_font = "FiraCode Nerd Font Mono 18"
 theme.font_taglist = "SF UI Display 13"
 theme.max_font = "SF UI Display 10"
 
@@ -77,7 +77,7 @@ theme.button_close = theme.xcolor1
 
 -- Borders
 
-theme.border_width = dpi(2)
+theme.border_width = dpi(5)
 theme.border_normal = theme.xcolor0
 theme.border_focus = theme.xcolor0
 theme.border_radius = dpi(10)
