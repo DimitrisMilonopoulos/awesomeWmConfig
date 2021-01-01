@@ -135,7 +135,7 @@ globalkeys = gears.table.join( -- Focus client by direction (arrow keys)
 
             end)
     end, {description = "open a terminal", group = "launcher"}),
-                 awful.key({modkey}, "s", function() awful.spawn(music) end,
+                 awful.key({modkey}, "u", function() awful.spawn(music) end,
                            {description = "open spot-tui", group = "launcher"}),
 
                  awful.key({modkey}, "f",
