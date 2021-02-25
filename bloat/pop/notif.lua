@@ -10,13 +10,13 @@ local popupLib = require("utils.popupLib")
 local popupWidget = wibox.widget {
     require("notifs.notif-center"),
     expand = "none",
-    layout = wibox.layout.fixed.horizontal
+    layout = wibox.layout.fixed.horizontal,
 }
 
 local width = 400
 local margin = 10
 
-local popup = popupLib.create(awful.screen.focused().geometry.width - width -
+local popup = popupLib.create(1920 - width -
                                   margin, beautiful.wibar_height + margin, nil,
                               width, popupWidget)
 

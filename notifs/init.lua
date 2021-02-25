@@ -20,6 +20,9 @@ naughty.config.defaults.border_width = 0
 -- naughty.config.defaults.border_color = beautiful.widget_border_color
 naughty.config.defaults.position = "top_middle"
 -- naughty.config.defaults.shape = helpers.rrect(beautiful.client_radius)
+naughty.config.defaults.shape = function(cr, width, height)
+                gears.shape.rounded_rect(cr, width, height, 12)
+            end
 
 naughty.config.padding = dpi(10)
 naughty.config.spacing = dpi(5)
@@ -27,7 +30,6 @@ naughty.config.icon_dirs = {
     "/usr/share/icons/Papirus-Dark/24x24/apps/", "/usr/share/pixmaps/"
 }
 naughty.config.icon_formats = {"png", "svg"}
-
 -- Timeouts
 naughty.config.presets.low.timeout = 3
 naughty.config.presets.critical.timeout = 0
@@ -35,17 +37,17 @@ naughty.config.presets.critical.timeout = 0
 naughty.config.presets.normal = {
     font = beautiful.font,
     fg = beautiful.fg_normal,
-    bg = beautiful.bg_normal
+    bg = beautiful.bg_normal .."00"
 }
 
 naughty.config.presets.low = {
     font = beautiful.font,
     fg = beautiful.fg_normal,
-    bg = beautiful.bg_normal
+    bg = beautiful.bg_normal .. "00"
 }
 
 naughty.config.presets.critical = {
-    font = "SF Mono Bold 10",
+    font = "SF Mono Bold 12",
     fg = "#ffffff",
     bg = "#ff0000",
     timeout = 0
@@ -58,6 +60,9 @@ naughty.config.presets.warn = naughty.config.presets.critical
 naughty.connect_signal("request::display", function(n)
 
     n.timeout = 3
+    local shape = function(cr, width, height)
+                gears.shape.rounded_rect(cr, width, height, 12)
+            end
 
     local appicon = n.icon or n.app_icon
     if not appicon then appicon = beautiful.notification_icon end
@@ -65,7 +70,7 @@ naughty.connect_signal("request::display", function(n)
     naughty.layout.box {
         notification = n,
         type = "notification",
-        bg = beautiful.xbackground .. "00",
+        bg = beautiful.xbackground,
         widget_template = {
             {
                 {
@@ -122,12 +127,14 @@ naughty.connect_signal("request::display", function(n)
                 strategy = "max",
                 width = beautiful.notification_max_width or
                     beautiful.xresources.apply_dpi(500),
-                widget = wibox.container.constraint
+                widget = wibox.container.constraint,
             },
-            bg = beautiful.xbackground,
+            bg = beautiful.xbackground .."00",
             border_color = beautiful.widget_border_color,
             border_width = beautiful.border_width,
-            shape = helpers.rrect(beautiful.client_radius),
+            shape = function(cr, width, height)
+                gears.shape.rounded_rect(cr, width, height, 12)
+            end,
             widget = wibox.container.background
         }
     }

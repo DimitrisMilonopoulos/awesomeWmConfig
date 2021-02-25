@@ -12,7 +12,7 @@ local dpi = xresources.apply_dpi
 
 local toolbar_position = "bottom"
 local toolbar_size = dpi(100)
-local toolbar_bg = beautiful.xcolor0
+local toolbar_bg = beautiful.xcolor0 .. beautiful.opac
 local toolbar_enabled_initially = true
 
 local terminal_has_to_move_after_resizing = {["st"] = true}
@@ -135,7 +135,7 @@ local spot_create_decoration = function(c)
     awful.titlebar(c, {
         position = toolbar_position,
         size = toolbar_size,
-        bg = beautiful.xbackground
+        bg = beautiful.xbackground .. beautiful.opac,
     }):setup{
         {
             {
@@ -162,16 +162,16 @@ local spot_create_decoration = function(c)
                         margins = dpi(6),
                         widget = wibox.container.margin
                     },
-                    bg = beautiful.xcolor0,
+                    bg = beautiful.xcolor0 .. beautiful.opac,
                     shape = helpers.rrect(beautiful.border_radius),
                     widget = wibox.container.background
                 },
                 expand = "outside",
                 layout = wibox.layout.align.horizontal
             },
-            bg = beautiful.xbackground,
+            bg = beautiful.xbackground .. beautiful.opac,
             shape = helpers.rrect(beautiful.border_radius),
-            widget = wibox.container.background
+            widget = wibox.container.background 
         },
         left = dpi(40),
         right = dpi(40),

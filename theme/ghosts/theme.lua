@@ -31,7 +31,7 @@ theme.delete_icon = icon_path .. "notif-center/delete.png"
 theme.delete_grey_icon = icon_path .. "notif-center/delete_grey.png"
 
 -- Load ~/.Xresources colors and set fallback colors
-
+theme.opac = "a8"
 theme.xbackground = "#2f343f"
 theme.xforeground = xrdb.foreground or "#d8dee8"
 theme.xcolor0 = "#282c34"
@@ -42,7 +42,7 @@ theme.xcolor4 = "#81a1c1"
 theme.xcolor5 = "#b48ead"
 theme.xcolor6 = "#89d0bA"
 theme.xcolor7 = "#e5e9f0"
-theme.xcolor8 = "#434a5a"
+theme.xcolor8 = "#434a5e"
 theme.xcolor9 = "#b3555e"
 theme.xcolor10 = "#93ae7c"
 theme.xcolor11 = "#dbbb7b"
@@ -50,6 +50,10 @@ theme.xcolor12 = "#7191b1"
 theme.xcolor13 = "#a6809f"
 theme.xcolor14 = "#7dbba8"
 theme.xcolor15 = "#d1d5dc"
+theme.xcolor16 = "#3b4252"
+
+-- nord
+
 
 -- Fonts
 
@@ -77,13 +81,13 @@ theme.button_close = theme.xcolor1
 
 -- Borders
 
-theme.border_width = dpi(5)
+theme.border_width = 3
 theme.border_normal = theme.xcolor0
 theme.border_focus = theme.xcolor0
 theme.border_radius = dpi(10)
 theme.client_radius = dpi(10)
-theme.widget_border_width = dpi(1)
-theme.widget_border_color = theme.xcolor0
+theme.widget_border_width = dpi(4)
+theme.widget_border_color = theme.xcolor8
 
 -- Taglist
 
@@ -95,7 +99,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
                                   taglist_square_size, theme.fg_normal)
 theme.taglist_font = theme.font_taglist
 theme.taglist_bg = theme.wibar_bg
-theme.taglist_bg_focus = theme.xbackground .. "00"
+theme.taglist_bg_focus = theme.xbackground
 theme.taglist_fg_focus = theme.xcolor4
 theme.taglist_bg_urgent = theme.wibar_bg
 theme.taglist_fg_urgent = theme.xcolor1
@@ -148,7 +152,7 @@ theme.tooltip_bg = theme.xcolor0
 theme.tooltip_fg = theme.xforeground
 theme.tooltip_font = theme.font
 theme.tooltip_border_width = theme.border_width
-theme.tooltip_border_color = theme.xcolor0
+theme.tooltip_border_color = theme.xcolor8
 theme.tooltip_opacity = 1
 theme.tooltip_align = "left"
 
@@ -169,7 +173,7 @@ theme.menu_border_width = theme.border_width
 -- Hotkeys Pop Up
 
 theme.hotkeys_font = theme.font
-theme.hotkeys_border_color = theme.xcolor0
+theme.hotkeys_border_color = theme.xcolor8
 
 -- Layout List
 

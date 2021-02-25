@@ -21,7 +21,7 @@ client.connect_signal("property::floating", function(c)
         awful.titlebar.show(c, "bottom")
         awful.titlebar.show(c, "right")
         awful.titlebar.show(c, "left")
-        c.border_width = dpi(0)
+        c.border_width = dpi(2)
     else
         if not c.bling_tabbed then
             awful.titlebar.hide(c, "top")
@@ -39,7 +39,7 @@ client.connect_signal("manage", function(c)
         awful.titlebar.show(c, "bottom")
         awful.titlebar.show(c, "right")
         awful.titlebar.show(c, "left")
-        c.border_width = dpi(0)
+        c.border_width = dpi(2)
     else
         if not c.bling_tabbed then
             awful.titlebar.hide(c, "top")
@@ -111,7 +111,7 @@ local function create_title_button(c, color_focus, color_unfocus)
     return tb
 end
 -- }}
-
+-- 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
@@ -150,7 +150,7 @@ client.connect_signal("request::titlebars", function(c)
     awful.titlebar(c, {
         position = "top",
         size = beautiful.titlebar_size,
-        bg = "#00000000"
+        bg = beautiful.color8
     }):setup{
         {
             {
@@ -194,7 +194,7 @@ client.connect_signal("request::titlebars", function(c)
     awful.titlebar(c, {
         position = "bottom",
         size = beautiful.client_radius * 2,
-        bg = "#00000000"
+        bg = beautiful.color8
     }):setup{
         {
             {
@@ -230,3 +230,4 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- EOF ------------------------------------------------------------------------
+-- 

@@ -31,7 +31,10 @@ local volume_adjust = wibox({
     height = height,
     visible = false,
     ontop = true,
-    bg = beautiful.xbackground .. "00"
+    bg = beautiful.xbackground .. beautiful.opac,
+    shape = function(cr,width,height)
+        gears.shape.rounded_rect(cr,width,height,12)
+    end,
 })
 
 local volume_bar = wibox.widget {
@@ -65,8 +68,11 @@ volume_adjust:setup{
         }
 
     },
-    shape = helpers.rrect(beautiful.client_radius),
-    bg = beautiful.xbackground,
+    -- shape = helpers.rrect(beautiful.client_radius),
+    shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,beautiful.client_radius)
+    end,
+    bg = beautiful.xbackground .. beautiful.opac,
     border_width = beautiful.widget_border_width,
     border_color = beautiful.widget_border_color,
     widget = wibox.container.background

@@ -9,6 +9,7 @@ local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 local icon_theme = "sheet"
 local icons = require("icons")
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 
 local systray_margin = (beautiful.wibar_height - beautiful.systray_icon_size) /
                            2
@@ -35,6 +36,8 @@ local awesome_icon = wibox.widget {
     margins = 5,
     layout = wibox.container.margin
 }
+
+-- Weather widget
 
 awesome_icon:connect_signal("mouse::enter",
                             function() panelPop.visible = true end)
@@ -146,7 +149,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Remove wibar on full screen
     local function remove_wibar(c)
-        if c.fullscreen or c.maximized then
+        if (c.fullscreen or c.maximized) and c.screen == s then
             s.mywibox.visible = false
         else
             s.mywibox.visible = true
@@ -170,7 +173,9 @@ awful.screen.connect_for_each_screen(function(s)
                 left = 11,
                 right = 11,
                 top = 1,
-                widget = wibox.container.margin
+                widget = wibox.container.margin,
+                border_width = 2,
+                border_color = beautiful.xcolor8,
             },
             id = 'background_role',
             widget = wibox.container.background
@@ -185,9 +190,9 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons,
         style = {
             bg = beautiful.xbackground,
-            shape = helpers.rrect(beautiful.border_radius - 3)
-            -- shape_border_width = beautiful.widget_border_width,
-            -- shape_border_color = beautiful.widget_border_color
+            shape = helpers.rrect(beautiful.border_radius - 3),
+            border_width = 2,
+            border_color = beautiful.xcolor8,
         },
         layout = {spacing = 10, layout = wibox.layout.fixed.horizontal},
         widget_template = {
@@ -210,7 +215,7 @@ awful.screen.connect_for_each_screen(function(s)
                 },
                 left  = 10,
                 right = 10,
-                widget = wibox.container.margin
+                widget = wibox.container.margin,
             },
             id     = 'background_role',
             widget = wibox.container.background,
@@ -226,11 +231,11 @@ awful.screen.connect_for_each_screen(function(s)
             {
                 {
                     awesome_icon,
-                    shape = helpers.rrect(beautiful.border_radius-3),
                     bg = beautiful.xbackground,
                     widget = wibox.container.background,
-                    -- border_width = beautiful.widget_border_width,
-                    -- border_color = beautiful.xcolor13,
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                 },
                 top = dpi(4),
                 bottom = dpi(4),
@@ -242,9 +247,9 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     s.mytaglist,
                     bg = beautiful.xbackground,
-                    -- border_width = beautiful.widget_border_width,
-                    -- border_color = beautiful.xcolor13,
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     widget = wibox.container.background
                 },
                 top = 4,
@@ -262,8 +267,39 @@ awful.screen.connect_for_each_screen(function(s)
             right = 5,
             left = 5,
             widget = wibox.container.margin
+            
         },
         {
+            {
+                {
+                    {
+                    weather_widget({
+                        api_key='059926711a784bf99dcf35e1e6203e98',
+                        coordinates = {37.986498348711635, 23.791046715572477},
+                        time_format_12h = true,
+                        units = 'metric',
+                        font_name = 'SF Display UI',
+                        show_hourly_forecast = true,
+                        show_daily_forecast = true,
+                    }),
+                top = 2,
+                bottom = 2,
+                right = 5,
+                left = 5,
+                        layout = wibox.container.margin
+                    },
+                    bg = beautiful.xbackground,
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
+                    widget = wibox.container.background
+                },
+                top = 4,
+                bottom = 4,
+                right = 5,
+                left = 5,
+                widget = wibox.container.margin
+            },
             {
                 {
                     {
@@ -275,7 +311,9 @@ awful.screen.connect_for_each_screen(function(s)
                         widget = wibox.container.margin
                     },
                     bg = beautiful.xbackground,
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     widget = wibox.container.background
                 },
                 top = 4,
@@ -293,7 +331,9 @@ awful.screen.connect_for_each_screen(function(s)
                         layout = wibox.container.margin
                     },
                     bg = beautiful.xbackground,
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     widget = wibox.container.background
                 },
                 top = 4,
@@ -310,7 +350,9 @@ awful.screen.connect_for_each_screen(function(s)
                         layout = wibox.container.margin
                     },
                     bg = beautiful.xbackground,
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     widget = wibox.container.background
                 },
                 top = 4,
@@ -330,7 +372,9 @@ awful.screen.connect_for_each_screen(function(s)
                         widget = wibox.container.margin
                     },
                     bg = beautiful.xbackground,
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     widget = wibox.container.background
                 },
                 top = 4,
@@ -347,7 +391,9 @@ awful.screen.connect_for_each_screen(function(s)
                         margins = 2,
                         widget = wibox.container.margin
                     },
-                    shape = helpers.rrect(beautiful.border_radius - 3),
+                    shape = helpers.rrect(beautiful.border_radius-5),
+                    border_width = 2,
+                    border_color = beautiful.xcolor8,
                     bg = beautiful.xbackground,
                     widget = wibox.container.background
                 },

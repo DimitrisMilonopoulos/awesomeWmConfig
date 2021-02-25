@@ -61,7 +61,7 @@ align_vertical:set_bottom(nil)
 local area = wibox.layout.fixed.horizontal()
 area:add(image_cont)
 area:add(wibox.container.margin(align_vertical, dpi(30), dpi(20), dpi(25), 0))
-area.bg = beautiful.xcolor0
+area.bg = beautiful.xcolor0 .. beautiful.opac
 
 local main_wd = wibox.widget {
     area,
@@ -70,7 +70,7 @@ local main_wd = wibox.widget {
     forced_width = dpi(200),
     forced_height = dpi(100),
     shape = helpers.rrect(dpi(6)),
-    bg = beautiful.xcolor0,
+    bg = beautiful.xcolor0 .. beautiful.opac,
     widget = wibox.container.margin
 }
 

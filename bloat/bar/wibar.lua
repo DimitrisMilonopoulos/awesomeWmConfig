@@ -201,7 +201,7 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     awesome_icon,
                     shape = helpers.rrect(beautiful.border_radius),
-                    bg = beautiful.xcolor0,
+                    bg = beautiful.xcolor0 .. beautiful.opac,
                     widget = wibox.container.background
                 },
                 margins = dpi(5),
@@ -231,7 +231,7 @@ awful.screen.connect_for_each_screen(function(s)
                         layout = wibox.container.margin
                     },
                     shape = helpers.rrect(beautiful.border_radius),
-                    bg = beautiful.xcolor0,
+                    bg = beautiful.xcolor0 .. beautiful.opac,
                     widget = wibox.container.background
                 },
                 margins = dpi(5),
@@ -246,7 +246,7 @@ awful.screen.connect_for_each_screen(function(s)
                         widget = wibox.container.margin
                     },
                     shape = helpers.rrect(beautiful.border_radius),
-                    bg = beautiful.xcolor0,
+                    bg = beautiful.xcolor0 .. beautiful.opac,
                     widget = wibox.container.background
                 },
                 margins = dpi(5),
@@ -261,7 +261,7 @@ awful.screen.connect_for_each_screen(function(s)
                         widget = wibox.container.margin
                     },
                     shape = helpers.rrect(beautiful.border_radius),
-                    bg = beautiful.xcolor0,
+                    bg = beautiful.xcolor0 .. beautiful.opac,
                     widget = wibox.container.background
                 },
                 margins = dpi(5),

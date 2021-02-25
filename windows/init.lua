@@ -7,8 +7,12 @@ local helpers = require("helpers")
 
 local bling = require("bling")
 
-client.connect_signal("manage", function(c) c.shape = helpers.rrect(0) end)
-
+-- client.connect_signal("manage", function(c) c.shape = helpers.rounded_rrect(cr, w, h, 8) end)
+client.connect_signal("manage", function (c)
+    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,0)
+    end
+end)
 -- Custom Layouts -------------------------------------------------------------
 
 local mstab = bling.layout.mstab

@@ -10,11 +10,11 @@ local popupLib = require("utils.popupLib")
 
 local calendar_themes = {
     java = {
-        bg = beautiful.xbackground,
+        bg = beautiful.xbackground .. beautiful.opac,
         fg = beautiful.xforeground,
         focus_date_bg = beautiful.xcolor8,
         focus_date_fg = beautiful.xcolor15,
-        weekend_day_bg = beautiful.xcolor0,
+        weekend_day_bg = beautiful.xcolor0 .. beautiful.opac,
         weekday_fg = beautiful.xforeground,
         header_fg = beautiful.xcolor4,
         border = '#4C566A'

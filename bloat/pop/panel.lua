@@ -193,7 +193,7 @@ local mpd_area = {
 --]]
 
 local spot = require("widgets.spot")
-local spot_box = create_boxed_widget(spot, 400, nil, beautiful.xcolor0)
+local spot_box = create_boxed_widget(spot, 400, nil, beautiful.xcolor0 .. beautiful.opac)
 
 -- }}}
 
@@ -217,7 +217,7 @@ local nord_area = {
 -- {{{ Info Widget
 
 local info = require("widgets.info")
-local info_box = create_boxed_widget(info, 400, 125, beautiful.xcolor0)
+local info_box = create_boxed_widget(info, 400, 125, beautiful.xcolor0 .. beautiful.opac)
 
 ---}}}
 
@@ -228,7 +228,7 @@ local sys = wibox.widget {
     ram,
     layout = wibox.layout.flex.vertical
 }
-local sys_box = create_boxed_widget(sys, 400, 225, beautiful.xcolor0)
+local sys_box = create_boxed_widget(sys, 400, 225, beautiful.xcolor0 .. beautiful.opac)
 
 local time = wibox.widget {
     {fancy_time, fancy_date, layout = wibox.layout.align.vertical},
@@ -239,7 +239,7 @@ local time = wibox.widget {
     widget = wibox.container.margin
 }
 
-local time_box = create_boxed_widget(time, 400, 159, beautiful.xcolor0)
+local time_box = create_boxed_widget(time, 400, 159, beautiful.xcolor0 .. beautiful.opac)
 
 local panelWidget = wibox.widget {
     info_box,

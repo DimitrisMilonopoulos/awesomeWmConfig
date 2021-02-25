@@ -17,7 +17,7 @@ popupLib.create = function(x, y, height, width, widget)
 
     local widgetBG = wibox.widget {
         widgetContainer,
-        bg = beautiful.xbackground,
+        bg = beautiful.xbackground .. beautiful.opac,
         border_color = beautiful.widget_border_color,
         border_width = dpi(beautiful.widget_border_width),
         shape = helpers.rrect(beautiful.client_radius),
@@ -25,13 +25,16 @@ popupLib.create = function(x, y, height, width, widget)
     }
 
     local popupWidget = awful.popup {
-        screen = screen[1],
+        screen =awful.screen.focused(),
         widget = widgetBG,
         visible = false,
         ontop = true,
         x = x,
         y = y,
-        bg = beautiful.xbackground .. "00"
+        bg = beautiful.xbackground .. beautiful.opac,
+        shape = function(cr,width,height)
+            gears.shape.rounded_rect(cr,width,height,12)
+        end,
         -- shape = helpers.rrect(beautiful.client_radius),
         -- border_width = beautiful.widget_border_width,
         -- border_color = beautiful.widget_border_color
@@ -42,7 +45,9 @@ popupLib.create = function(x, y, height, width, widget)
         timeout = 1.25,
         single_shot = true,
         callback = function()
-            if not mouseInPopup then popupWidget.visible = false end
+            if not mouseInPopup then 
+                popupWidget.visible = false
+             end
         end
     }
 
@@ -54,7 +59,9 @@ popupLib.create = function(x, y, height, width, widget)
     end)
 
     popupWidget:connect_signal("mouse::enter",
-                               function() mouseInPopup = true end)
+                               function() 
+                                mouseInPopup = true
+                             end)
 
     return popupWidget
 end

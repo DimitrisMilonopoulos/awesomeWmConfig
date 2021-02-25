@@ -55,8 +55,8 @@ screen_height = awful.screen.focused().geometry.height
 terminal = "alacritty"
 editor = "jumpapp code"
 editor_cmd = terminal .. " -e " .. editor
-browser = "jumpapp firefox"
-filemanager = "jumpappnautilus"
+browser = "jumpapp chromium"
+filemanager = "jumpapp nautilus"
 discord = "jumpapp discord"
 music = terminal .. " -e spt"
 -- Default modkey.
@@ -121,7 +121,7 @@ awful.screen.connect_for_each_screen(function(s)
     awful.tag(my_tags.tags[screen_index].names, s, awful.layout.layouts[1])
 
     gears.wallpaper.fit(gears.filesystem.get_configuration_dir() ..
-                            "images/bg.png", s, nil)
+                            "images/bg.jpg", s, nil)
 
 end)
 
@@ -170,7 +170,7 @@ awful.rules.rules = {
             class = {
                 "Arandr", "Blueman-manager", "Gpick", "Kruler", "MessageWin", -- kalarm.
                 "Sxiv", "fzfmenu", "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-                "Wpa_gui", "veromix", "xtightvncviewer", "Steam"
+                "Wpa_gui", "veromix", "xtightvncviewer", "Steam", "Rofi"
             },
 
             -- Note that the name property shown in xprop might be set slightly after creation of the client
