@@ -83,7 +83,7 @@ theme.button_close = theme.xcolor1
 
 theme.border_width = 3
 theme.border_normal = theme.xcolor0
-theme.border_focus = theme.xcolor0
+theme.border_focus = theme.xcolor8
 theme.border_radius = dpi(10)
 theme.client_radius = dpi(10)
 theme.widget_border_width = dpi(4)

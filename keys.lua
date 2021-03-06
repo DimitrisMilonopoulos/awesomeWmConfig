@@ -22,22 +22,22 @@ globalkeys = gears.table.join( -- Focus client by direction (arrow keys)
     }), awful.key({"Mod1"}, "d", function() bling.module.tabbed.pop() end, {
         description = "remove focused client from tabbing group",
         group = "Tabs"
-    }), --[[ awful.key({modkey}, "Down", function()
-        awful.client.focus.bydirection("down")
+    }), awful.key({modkey}, "Down", function()
+        awful.client.focus.bydirection("j")
         bling.module.flash_focus.flashfocus(client.focus)
     end, {description = "focus down", group = "client"}),
-                 awful.key({modkey}, "Up", function()
+                 awful.key({modkey}, "k", function()
         awful.client.focus.bydirection("up")
         bling.module.flash_focus.flashfocus(client.focus)
     end, {description = "focus up", group = "client"}),
-                 awful.key({modkey}, "Left", function()
+                 awful.key({modkey}, "h", function()
         awful.client.focus.bydirection("left")
         bling.module.flash_focus.flashfocus(client.focus)
     end, {description = "focus left", group = "client"}),
-                 awful.key({modkey}, "Right", function()
+                 awful.key({modkey}, "l", function()
         awful.client.focus.bydirection("right")
         bling.module.flash_focus.flashfocus(client.focus)
-    end, {description = "focus right", group = "client"}), --]] awful.key(
+    end, {description = "focus right", group = "client"}), awful.key(
                      {modkey}, "F1", hotkeys_popup.show_help,
                      {description = "show help", group = "awesome"}),
                  awful.key({modkey}, "Escape", awful.tag.history.restore,
@@ -155,11 +155,11 @@ globalkeys = gears.table.join( -- Focus client by direction (arrow keys)
                  awful.key({modkey, "Shift"}, "p", awesome.quit,
                            {description = "quit awesome", group = "awesome"}),
 
-                 awful.key({modkey}, "l",
+                 awful.key({modkey, "Control"}, "l",
                            function() awful.tag.incmwfact(0.05) end, {
         description = "increase master width factor",
         group = "layout"
-    }), awful.key({modkey}, "h", function() awful.tag.incmwfact(-0.05) end, {
+    }), awful.key({modkey, "Control"}, "h", function() awful.tag.incmwfact(-0.05) end, {
         description = "decrease master width factor",
         group = "layout"
     }), awful.key({modkey, "Shift"}, "h",
@@ -170,7 +170,7 @@ globalkeys = gears.table.join( -- Focus client by direction (arrow keys)
                   function() awful.tag.incnmaster(-1, nil, true) end, {
         description = "decrease the number of master clients",
         group = "layout"
-    }), awful.key({modkey, "Control"}, "h",
+    }), awful.key({modkey, "Control"}, "Up",
                   function() awful.tag.incncol(1, nil, true) end, {
         description = "increase the number of columns",
         group = "layout"

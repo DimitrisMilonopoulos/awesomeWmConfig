@@ -17,11 +17,11 @@ client.connect_signal("property::floating", function(c)
     local b = false;
     if c.first_tag ~= nil then b = c.first_tag.layout.name == "floating" end
     if c.floating or b then
-        awful.titlebar.show(c, "top")
-        awful.titlebar.show(c, "bottom")
-        awful.titlebar.show(c, "right")
-        awful.titlebar.show(c, "left")
-        c.border_width = dpi(2)
+        -- awful.titlebar.show(c, "top")
+        -- awful.titlebar.show(c, "bottom")
+        -- awful.titlebar.show(c, "right")
+        -- awful.titlebar.show(c, "left")
+        -- c.border_width = dpi(2)
     else
         if not c.bling_tabbed then
             awful.titlebar.hide(c, "top")
@@ -35,11 +35,11 @@ end)
 
 client.connect_signal("manage", function(c)
     if c.floating or c.first_tag.layout.name == "floating" then
-        awful.titlebar.show(c, "top")
-        awful.titlebar.show(c, "bottom")
-        awful.titlebar.show(c, "right")
-        awful.titlebar.show(c, "left")
-        c.border_width = dpi(2)
+        -- awful.titlebar.show(c, "top")
+        -- awful.titlebar.show(c, "bottom")
+        -- awful.titlebar.show(c, "right")
+        -- awful.titlebar.show(c, "left")
+        -- c.border_width = dpi(2)
     else
         if not c.bling_tabbed then
             awful.titlebar.hide(c, "top")
@@ -55,11 +55,11 @@ tag.connect_signal("property::layout", function(t)
     local clients = t:clients()
     for k, c in pairs(clients) do
         if c.floating or c.first_tag.layout.name == "floating" then
-            awful.titlebar.show(c, "top")
-            awful.titlebar.show(c, "bottom")
-            awful.titlebar.show(c, "right")
-            awful.titlebar.show(c, "left")
-            c.border_width = dpi(0)
+            -- awful.titlebar.show(c, "top")
+            -- awful.titlebar.show(c, "bottom")
+            -- awful.titlebar.show(c, "right")
+            -- awful.titlebar.show(c, "left")
+            -- c.border_width = dpi(0)
         else
             if not c.bling_tabbed then
                 awful.titlebar.hide(c, "top")

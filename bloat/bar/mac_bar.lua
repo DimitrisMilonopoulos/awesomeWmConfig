@@ -191,6 +191,8 @@ awful.screen.connect_for_each_screen(function(s)
         style = {
             bg = beautiful.xbackground,
             shape = helpers.rrect(beautiful.border_radius - 3),
+            shape_border_width = 2,
+            shape_border_color = beautiful.xcolor8,
             border_width = 2,
             border_color = beautiful.xcolor8,
         },
@@ -207,10 +209,10 @@ awful.screen.connect_for_each_screen(function(s)
                         widget  = wibox.container.margin,
                     },
                     nil,
-                    {
-                       id = 'text_role',
-                       widget = wibox.widget.textbox,
-                    },
+                    -- {
+                    --    id = 'text_role',
+                    --    widget = wibox.widget.textbox,
+                    -- },
                     layout = wibox.layout.fixed.horizontal,
                 },
                 left  = 10,
