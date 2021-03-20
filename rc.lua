@@ -52,7 +52,7 @@ end
 theme = "ghosts"
 screen_width = awful.screen.focused().geometry.width
 screen_height = awful.screen.focused().geometry.height
-terminal = "alacritty"
+terminal = "kitty -o allow_remote_control=yes --listen-on unix:/tmp/mykitty"
 editor = "jumpapp code"
 editor_cmd = terminal .. " -e " .. editor
 browser = "jumpapp chromium"
@@ -120,8 +120,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- awful.tag({"", "", "", "", "ﭮ"}, s, awful.layout.layouts[1])
     awful.tag(my_tags.tags[screen_index].names, s, awful.layout.layouts[1])
 
-    gears.wallpaper.fit(gears.filesystem.get_configuration_dir() ..
-                            "images/bg.jpg", s, nil)
+    -- gears.wallpaper.fit(gears.filesystem.get_configuration_dir() ..
+    --                         "images/bg.jpg", s, nil)
 
 end)
 

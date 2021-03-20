@@ -36,11 +36,11 @@ local battery_tooltip = awful.tooltip {}
 battery_tooltip:add_to_object(battery_bar)
 battery_tooltip.text = 'Not Updated'
 
-awesome.connect_signal("ears::battery", function(value)
-    battery_bar:connect_signal('mouse::enter', function()
-        battery_tooltip.text = value .. '%'
-    end)
-end)
+-- awesome.connect_signal("ears::battery", function(value)
+--     battery_bar:connect_signal('mouse::enter', function()
+--         battery_tooltip.text = value .. '%'
+--     end)
+-- end)
 
 local q = 0
 local g = gears.timer {

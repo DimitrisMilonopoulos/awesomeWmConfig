@@ -16,7 +16,7 @@ local helpers = require("helpers")
 -- Inherit default theme
 
 local theme = dofile(themes_path .. "default/theme.lua")
-local transparent = "#00000000" 
+local transparent = "#282c3400" 
 
 -- Titlebar icon path
 

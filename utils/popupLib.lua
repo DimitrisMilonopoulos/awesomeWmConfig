@@ -1,4 +1,5 @@
 local awful = require("awful")
+local naughty = require("naughty")
 local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
@@ -25,7 +26,7 @@ popupLib.create = function(x, y, height, width, widget)
     }
 
     local popupWidget = awful.popup {
-        screen =awful.screen.focused(),
+        screen = awful.screen.focused(),
         widget = widgetBG,
         visible = false,
         ontop = true,
