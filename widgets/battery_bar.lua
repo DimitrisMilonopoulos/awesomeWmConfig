@@ -21,7 +21,7 @@ local battery_bar = wibox.widget {
     max_value = 98,
     value = 50,
     forced_height = dpi(10),
-    margins = {top = dpi(8), bottom = dpi(8)},
+    margins = {top = dpi(5), bottom = dpi(5)},
     forced_width = dpi(200),
     shape = helpers.rrect(beautiful.border_radius),
     bar_shape = helpers.rrect(beautiful.border_radius),
@@ -68,7 +68,7 @@ local g = gears.timer {
 awesome.connect_signal("ears::charger", function(plugged)
 
     awesome.connect_signal("ears::battery", function(value)
-        if plugged then
+        if plugged and value <= 97 then
             g:start()
         else
             g:stop()

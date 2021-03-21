@@ -276,7 +276,7 @@ awful.screen.connect_for_each_screen(function(s)
                 {
                     {
                     weather_widget({
-                        api_key='059926711a784bf99dcf35e1e6203e98',
+                        api_key='0b4886e416a602430bf525cff698b879',
                         coordinates = {37.986498348711635, 23.791046715572477},
                         time_format_12h = true,
                         units = 'metric',
