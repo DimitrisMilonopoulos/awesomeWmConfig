@@ -237,6 +237,7 @@ client.connect_signal("manage", function(c)
     end
 
 end)
+bling.signal.playerctl.enable()
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
