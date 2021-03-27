@@ -51,7 +51,7 @@ local function format_progress_bar(bar, markup)
         markup = markup,
         align = 'center',
         valign = 'center',
-        font = 'SF Mono 12',
+        font = 'SF Mono 22',
         widget = wibox.widget.textbox
     }
     text.forced_height = dpi(36)
@@ -80,7 +80,7 @@ end
 local volume_bar = require("widgets.volume_bar")
 local volume = format_progress_bar(volume_bar, "<span foreground='" ..
                                        beautiful.xcolor10 ..
-                                       "'><b>VOL</b></span>")
+                                       "'><b>墳</b></span>")
 
 apps_volume = function()
     helpers.run_or_raise({class = 'Pavucontrol'}, true, "pavucontrol")
@@ -100,7 +100,7 @@ local brightness_icon = wibox.widget.imagebox(icons.brightness)
 local brightness_bar = require("widgets.brightness_bar")
 local brightness = format_progress_bar(brightness_bar, "<span foreground='" ..
                                            beautiful.xcolor12 ..
-                                           "'><b>SUN</b></span>")
+                                           "'><b></b></span>")
 
 -- local brightness = require("widgets.brightness_arc")
 
@@ -113,7 +113,7 @@ local brightness = format_progress_bar(brightness_bar, "<span foreground='" ..
 local ram_icon = wibox.widget.imagebox(icons.ram)
 local ram_bar = require("widgets.ram_bar")
 local ram = format_progress_bar(ram_bar, "<span foreground='" ..
-                                    beautiful.xcolor11 .. "'><b>RAM</b></span>")
+                                    beautiful.xcolor11 .. "'><b></b></span>")
 
 --- }}}
 
@@ -124,7 +124,8 @@ local ram = format_progress_bar(ram_bar, "<span foreground='" ..
 local cpu_icon = wibox.widget.imagebox(icons.cpu)
 local cpu_bar = require("widgets.cpu_bar")
 local cpu = format_progress_bar(cpu_bar, "<span foreground='" ..
-                                    beautiful.xcolor13 .. "'><b>CPU</b></span>")
+                                    beautiful.xcolor13 .. "'><b></b></span>")
+
 
 --- }}}
 
